@@ -6,11 +6,7 @@
 //  Copyright © 2019 Alex Paul. All rights reserved.
 //
 
-
-//The Game object has the following computed properties:
-//
-//hasMoreCards returns a Bool
-//randomComputerScore returns an Int
+import Foundation
 
 //The Game object has the following methods:
 //
@@ -20,21 +16,26 @@
 //computerVsPlayer() draws a random number for the computer and determines the winner of the game.
 //gameStatus() takes in the player's card and determines the current score. Here the player score options can be, BlackJack, Bust or Continue playing as their status is still valid for game play.
 
-import Foundation
-
 struct GameObject {
     var deck: [Card]
     var player: Player
     var hitPlayeris: Bool
 }
-//The Game object has the following computed properties:
-//
-//hasMoreCards returns a Bool
-//randomComputerScore returns an Int
-
-func Game(hasMoreCards:Bool) -> Bool {
-
-    return hasMoreCards
+func game(hasMoreCards: Bool, randomComputerScore: Int) -> Any {
+    if hasMoreCards == true {
+        return game
+    } else {
+        return randomComputerScore
+    }
 }
+
+//func Game(hasMoreCards:Bool) -> Bool {
+//    var _ = hasMoreCards
+//    func Game(randomComputerScore: Int) -> Int {
+//    var _ = randomComputerScore
+//    return randomComputerScore
+//}
+//    return hasMoreCards
+//}
 
 
