@@ -6,15 +6,12 @@
 //  Copyright © 2019 Alex Paul. All rights reserved.
 //
 
-//The Game object has the following instance properties:
-//
-//deck is an array of [Card]
-//player is a Player
-//hitPlayeris a Bool
+
 //The Game object has the following computed properties:
 //
 //hasMoreCards returns a Bool
 //randomComputerScore returns an Int
+
 //The Game object has the following methods:
 //
 //newGame() resets the game
@@ -24,3 +21,20 @@
 //gameStatus() takes in the player's card and determines the current score. Here the player score options can be, BlackJack, Bust or Continue playing as their status is still valid for game play.
 
 import Foundation
+
+struct GameObject {
+    var deck: [Card]
+    var player: Player
+    var hitPlayeris: Bool
+}
+//The Game object has the following computed properties:
+//
+//hasMoreCards returns a Bool
+//randomComputerScore returns an Int
+
+func Game(hasMoreCards:Bool) -> Bool {
+
+    return hasMoreCards
+}
+
+
