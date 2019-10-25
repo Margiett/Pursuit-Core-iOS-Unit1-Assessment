@@ -20,16 +20,18 @@ class Game {
     
     var hasMoreCards:Bool {
         return !deck.isEmpty
-        // just in case the deck is empty ask for clarification because i dont understand why they want us to add hadMoreCards
+        // just in case the deck is empty
     }
     
     func newGame() { //this resets the game
+        deck.removeAll()
+        deck = Card.newDeck(aceValue: 1)
         self.player.score = 0
         self.deck = Card.newDeck(aceValue: 1)
 }
 
     func hitMe() {
-        print("Hit me?")
+        //print("Hit me?")
         deck = deck.shuffled()
         if let originalCard = deck.popLast(){
             var cardArray = [String]()
