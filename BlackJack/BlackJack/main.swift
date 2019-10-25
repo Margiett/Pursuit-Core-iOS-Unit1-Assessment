@@ -13,24 +13,24 @@ var userResponse = Bool()
 print(" !!! Welcome to BlackJAck !! ")
 
 print(" Hit or Pass")
-print("There are \(Card.newDeck(aceValue: 1).count) in a deck of cards")
+print("There are \(Card.newDeck(aceValue: 1).count) in a deck of cards") // this is calling the functions
 let game = Game()
 game.newGame() // this will reset the game
 var userPrompt = "Please Choice one (Hit, or Pass)"
 let hit = "hit"
 let pass = "pass"
 
-print(userPrompt)
-
-
 var playAgain = false
 //var userResponse = Bool()
-//let userPrompt = "Hit or Pass ??"
+//var userPrompt = "Hit or Pass ??"
 
 repeat {
-//    print(userPrompt).readLine() ?? ""
-//    let userResponse = readLine() ?? ""
-//    game.newGame(userResponse)
+    print(userPrompt)
+    let userResponse = readLine()!.lowercased()
+    if userResponse == hit.lowercased().readLine() {
+        
+    }
+    game.newGame(userResponse)?.lower
     
 } while false
 
