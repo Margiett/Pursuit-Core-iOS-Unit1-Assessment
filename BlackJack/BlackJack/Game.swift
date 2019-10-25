@@ -21,10 +21,19 @@ class Game {
 //        self.hitPlayer = hitPlayer
 //    }
     
+    //properties
     var hasMoreCards:Bool {
         return !deck.isEmpty
         // just in case the deck is empty
     }
+    //var rang = Int(0)
+//    var randomCompScore: Int {
+//        let range = 17...23
+//        return range.randomElement() ?? <#default value#>
+//    } // trying to figure out a way for the computer to grab a random number for the computer and determin the winner !!
+    // i think this is a repeatition
+    
+    // methods of the game
     
     func newGame() { //this resets the game
         deck.removeAll()
@@ -39,8 +48,9 @@ class Game {
 
     func hitMe() {
         //print("Hit me?")
+       // if hasMoreCards == true
         deck = deck.shuffled()
-        if let originalCard = deck.popLast(){
+        if let originalCard = deck.popLast(){ // this is suppose to pull cards from the deck
             var cardArray = [String]()
             player.score = player.score + originalCard.value
             cardArray.append(originalCard.stringify().description)

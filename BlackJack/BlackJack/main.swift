@@ -32,7 +32,7 @@ repeat {
     } else if userResponse == pass {
         
     }
-    game.newGame(userResponse)?.lower
+   // game.newGame(userResponse)?.lower
     
 } while false
 
