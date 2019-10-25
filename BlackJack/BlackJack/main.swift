@@ -27,7 +27,9 @@ var playAgain = false
 repeat {
     print(userPrompt)
     let userResponse = readLine()!.lowercased()
-    if userResponse == hit.lowercased().readLine() {
+    if userResponse == hit {
+        game.hitMe()
+    } else if userResponse == pass {
         
     }
     game.newGame(userResponse)?.lower
