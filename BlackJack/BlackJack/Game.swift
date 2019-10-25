@@ -29,6 +29,7 @@ class Game {
 }
 
     func hitMe() {
+        print("Hit me?")
         deck = deck.shuffled()
         if let originalCard = deck.popLast(){
             var cardArray = [String]()
