@@ -8,13 +8,12 @@
 
 import Foundation
 class Game {
-    var deck = [Card]()
+    var deck: [Card]
     var player: Player
     var hitPlayer = true
-    init(deck: [Card],
-         player: Player,
+    init(player: Player,
          hitPlayer: Bool) {
-        self.deck = deck
+        self.deck = Card.newDeck(aceValue: 1)
         self.player = player //?? Player(cards:deck)
         self.hitPlayer = hitPlayer
     }
@@ -24,16 +23,15 @@ class Game {
         // just in case the deck is empty ask for clarification because i dont understand why they want us to add hadMoreCards
     }
     
-    func newGame() {
+    func newGame() { //this resets the game
         self.player.score = 0
         self.deck = Card.newDeck(aceValue: 1)
 }
 
-    var cardArray = [String]()
-    
     func hitMe() {
         deck = deck.shuffled()
         if let originalCard = deck.popLast(){
+            var cardArray = [String]()
             player.score = player.score + originalCard.value
             cardArray.append(originalCard.stringify().description)
             for card in cardArray {

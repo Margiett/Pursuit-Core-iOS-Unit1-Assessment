@@ -12,9 +12,20 @@
 //Use a repeat-while to allow the user options between getting new cards by calling the hitMe() method or passing by calling the stopHits() method.
 //When the player has won or lost ask them if they would wish to continue playing another round.
 
-
+//Create an instance of the Game()
+//Call newGame on the newly created instance above.
+//Create a gameOver instance and set it to false. This will be used in your repeat-while to determine if game play should stop.
+//Use a repeat-while to allow the user options between getting new cards by calling the hitMe() method or passing by calling the stopHits() method.
+//When the player has won or lost ask them if they would wish to continue playing another round.
 import Foundation
+var userScore = Int(0)
+var player = Player()
 
-// TODO: remove these lines after you have added the Suit and FaceCard enums as per the assessment README
+let game = Game(player: player, hitPlayer: true)
+
+
+
+
+
 print("There are \(Card.newDeck(aceValue: 1).count) in a deck of cards")
 // There are 52 in a deck of cards
