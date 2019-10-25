@@ -8,15 +8,18 @@
 
 import Foundation
 class Game {
-    var deck: [Card]
-    var player: Player
-    var hitPlayer = true
-    init(player: Player,
-         hitPlayer: Bool) {
-        self.deck = Card.newDeck(aceValue: 1)
-        self.player = player //?? Player(cards:deck)
-        self.hitPlayer = hitPlayer
-    }
+    var deck: [Card] = Card.newDeck(aceValue: 1)
+    var player = Player(score: 0, cards: [Card](), playerName: "Margiett")
+    var hitPlayer: Bool = true
+    var computerScore: Int = 0
+    
+    
+//    init(player: Player,
+//         hitPlayer: Bool) {
+//        self.deck = deck
+//        self.player = player //?? Player(cards:deck)
+//        self.hitPlayer = hitPlayer
+//    }
     
     var hasMoreCards:Bool {
         return !deck.isEmpty
@@ -26,6 +29,10 @@ class Game {
     func newGame() { //this resets the game
         deck.removeAll()
         deck = Card.newDeck(aceValue: 1)
+        player.score = 0
+        //player.score.removeAll()
+        computerScore = 0
+        self.computerScore = 0
         self.player.score = 0
         self.deck = Card.newDeck(aceValue: 1)
 }
@@ -43,7 +50,7 @@ class Game {
             print("Your current score is \(player.score)")
         }
     }
-    var computerScore = Int()
+   
     var randomComputerScore = Int()
     func stopHits() -> Int {
         computerScore = randomComputerScore
